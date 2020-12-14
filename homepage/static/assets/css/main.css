@@ -1,0 +1,787 @@
+@charset "UTF-8";
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:200");
+
+/* Basic */
+
+	@-ms-viewport {
+		width: device-width;
+	}
+
+	/* On mobile phones, stop squashing our page beyond 240 px so our icons stay on the same line */
+	@media screen and (max-width: 600px) {
+		html, body, header {
+			min-width: 260px;
+		}
+	}
+    /* Background */ 
+	body {
+		background-color: #000;
+		background-image: url("../../images/background.jpg");
+		background-repeat: repeat;
+		background-size: cover;
+		background-position: top center;
+        text-align: center;
+	}
+
+/* Font */
+
+    /* Desktop settings */
+	body {
+		color: rgba(255, 255, 255, 0.95); 
+		font-family: "Source Sans Pro", Helvetica, sans-serif;
+		font-size: 15pt;
+		font-weight: 200;
+		line-height: 1.65;
+	}
+		/* Tablet - Laptop will have font size 12 */
+		@media screen and (max-width: 1000px) {
+			body, input, select, textarea {
+				font-size: 13pt;
+				line-height: 1.45;
+			}
+		}
+
+		/* Anything below tablet size will have font size 11 */
+		@media screen and (max-width: 600px) {
+			body, input, select, textarea {
+				font-size: 11pt;
+				line-height: 1.25;
+			}
+		}
+
+/* Link */
+	a {
+		color: inherit;
+		text-decoration: none; /* remove underline */
+	}
+
+		a:hover {
+			color: #ffffff;
+			border-bottom-color: transparent;
+		}
+
+/* Text */
+
+	strong {
+		color: #ffffff;
+		font-weight: 300;
+	}
+
+
+
+	h1, h2, h3, h4, h5, h6 {
+		color: #ffffff;
+		font-weight: 200; /* Thin text looks nicer */
+		line-height: 1.5;
+		margin: 0.5em 0;
+	}
+
+	h1 {
+		font-size: 3em;
+	}
+
+		@media screen and (max-width: 500px) {
+
+			h1 {
+				font-size: 2.5em;
+			}
+
+		}
+
+	h2 {
+		font-size: 1.75em;
+	}
+
+		@media screen and (max-width: 736px) {
+
+			h2 {
+				font-size: 1em;
+			}
+
+		}
+
+    /* Style block quotes to make them look nicer */
+	blockquote {
+		border-left: solid 4px rgba(255, 255, 255, 0.25); 
+		font-style: italic;
+		margin: 0 0 2em 0;
+		padding: 0.5em 0 0.5em 2em;
+	}
+
+	/* Style code to make them look nicer */
+	code {
+		/*
+		background: rgba(255, 255, 255, 0.075);
+		border-radius: 4px;
+		border: solid 1px rgba(255, 255, 255, 0.25); */
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0.25em;
+		padding: 0.15em 0.65em;
+	}
+
+	pre {
+		-webkit-overflow-scrolling: touch;
+		font-family: "Courier New", monospace;
+		font-size: 0.9em;
+		margin: 0 0 2em 0;
+	}
+
+		pre code {
+			display: block;
+			line-height: 1.75;
+			padding: 1em 1.5em;
+			overflow-x: auto;
+		}
+
+	hr {
+		border: 0;
+		border-bottom: solid 1px rgba(255, 255, 255, 0.25);
+		margin: 2em 0;
+	}
+
+		hr.major {
+			margin: 3em 0;
+		}
+
+	.align-left {
+		text-align: left;
+	}
+
+	.align-center {
+		text-align: center;
+	}
+
+	.align-right {
+		text-align: right;
+	}
+
+/* Section/Article */
+
+	section.special, article.special {
+		text-align: center;
+	}
+
+	header p {
+		color: rgba(255, 255, 255, 0.35);
+		position: relative;
+		margin: 0 0 1.5em 0;
+	}
+
+	header h2 + p {
+		font-size: 1.25em;
+		margin-top: -1em;
+	}
+
+	header h3 + p {
+		font-size: 1.1em;
+		margin-top: -0.8em;
+	}
+
+	header h4 + p,
+	header h5 + p,
+	header h6 + p {
+		font-size: 0.9em;
+		margin-top: -0.6em;
+	}
+
+
+
+/* Form */
+
+	form {
+		margin: 0 0 2em 0;
+	}
+
+	label {
+		color: #ffffff;
+		display: block;
+		font-size: 0.9em;
+		font-weight: 200;
+		margin: 0 0 1em 0;
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	select,
+	textarea {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: rgba(255, 255, 255, 0.075);
+		border-radius: 4px;
+		border: none;
+		border: solid 1px rgba(255, 255, 255, 0.25);
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 0 0 1em;
+		text-decoration: none;
+		width: 100%;
+	}
+
+		input[type="text"]:invalid,
+		input[type="password"]:invalid,
+		input[type="email"]:invalid,
+		input[type="tel"]:invalid,
+		select:invalid,
+		textarea:invalid {
+			box-shadow: none;
+		}
+
+		input[type="text"]:focus,
+		input[type="password"]:focus,
+		input[type="email"]:focus,
+		input[type="tel"]:focus,
+		select:focus,
+		textarea:focus {
+			border-color: #d0f5f2;
+			box-shadow: 0 0 0 1px#d0f5f2;
+		}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select {
+		height: 2.75em;
+	}
+
+	textarea {
+		padding: 0.75em 1em;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		display: block;
+		float: left;
+		margin-right: -2em;
+		opacity: 0;
+		width: 1em;
+		z-index: -1;
+	}
+
+		input[type="checkbox"] + label,
+		input[type="radio"] + label {
+			text-decoration: none;
+			color: rgba(255, 255, 255, 0.65);
+			cursor: pointer;
+			display: inline-block;
+			font-size: 1em;
+			font-weight: 200;
+			padding-left: 2.4em;
+			padding-right: 0.75em;
+			position: relative;
+		}
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				font-family: FontAwesome;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: none !important;
+			}
+
+			input[type="checkbox"] + label:before,
+			input[type="radio"] + label:before {
+				background: rgba(255, 255, 255, 0.075);
+				border-radius: 4px;
+				border: solid 1px rgba(255, 255, 255, 0.25);
+				content: '';
+				display: inline-block;
+				height: 1.65em;
+				left: 0;
+				line-height: 1.58125em;
+				position: absolute;
+				text-align: center;
+				top: 0;
+				width: 1.65em;
+			}
+
+		input[type="checkbox"]:checked + label:before,
+		input[type="radio"]:checked + label:before {
+			background: #d0f5f2;
+			border-color: #d0f5f2;
+			color: #ffffff;
+			content: '\f00c';
+		}
+
+		input[type="checkbox"]:focus + label:before,
+		input[type="radio"]:focus + label:before {
+			border-color: #d0f5f2;
+			box-shadow: 0 0 0 1px #d0f5f2;
+		}
+
+	input[type="checkbox"] + label:before {
+		border-radius: 4px;
+	}
+
+	input[type="radio"] + label:before {
+		border-radius: 100%;
+	}
+
+	::-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.35) !important;
+		opacity: 1.0;
+	}
+
+	:-moz-placeholder {
+		color: rgba(255, 255, 255, 0.35) !important;
+		opacity: 1.0;
+	}
+
+	::-moz-placeholder {
+		color: rgba(255, 255, 255, 0.35) !important;
+		opacity: 1.0;
+	}
+
+	:-ms-input-placeholder {
+		color: rgba(255, 255, 255, 0.35) !important;
+		opacity: 1.0;
+	}
+
+	.formerize-placeholder {
+		color: rgba(255, 255, 255, 0.35) !important;
+		opacity: 1.0;
+	}
+
+
+
+/* Icon */
+/* First add some padding to icons so it looks nice when we have text next to it */
+	i {
+		padding: 0 0.5em 0 0;
+	}
+
+	/* Now style our icon class for the home page circle icons */ 
+	.icon {
+		text-decoration: none;
+		border-bottom: none;
+		position: relative;
+	}
+
+		.icon:before {
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-family: FontAwesome;
+			font-style: normal;
+			font-weight: normal;
+			text-transform: none !important;
+		}
+
+		.icon > .label {
+			display: none;
+		}
+
+		.icon.style2 {
+			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-radius: 100%;
+			display: inline-block;
+			padding: 0.5em;
+			border: solid 1px rgba(255, 255, 255, 0.25);
+			background-color: rgba(255, 255, 255, 0.075);
+			display: block;
+			width: 1.25em;
+			height: 1.25em;
+			line-height: 1.25em;
+			font-size: 1.35em;
+		}
+
+			.icon.style2:hover {
+				background-color: rgba(255, 255, 255, 0.25);
+			}
+
+			@media screen and (max-width: 736px) {
+
+				.icon.style2:before {
+					font-size: 1em;
+				}
+
+			}
+
+
+/* Lists */
+	/* Ordered Lists */
+	ol {
+		list-style: decimal;
+		margin: 0.5em, 0;
+		padding-left: 1em;
+	}
+
+		ol li {
+			padding-left: 0.5em;
+		}
+	/* Unordered Lists */
+	ul {
+		list-style: disc;
+		margin: 1.5em, 0; 
+		/*padding-left: 1em; */
+	}
+
+		ul li {
+			padding-left: 1.2em;
+		}
+
+		/* The homepage icon styling */
+		ul.icons {
+			cursor: default;
+			list-style: none;
+			padding-left: 0;
+		}
+
+			ul.icons li {
+				display: inline-block;
+			}
+
+				ul.icons li:first-child {
+					padding-left: 0;
+				}
+
+				ul.icons li:last-child {
+					padding-right: 0;
+				}
+
+
+/* Tooltip */
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: 110%;
+  left: 50%;
+  margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+/* Button */
+
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
+	.button {
+		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+		cursor: pointer;
+		display: inline-block;
+        font-size: normal;
+		height: 2.85em;
+		line-height: 2.95em;
+		padding: 0 1.5em;
+		text-align: center;
+        border-radius: 4px; 
+        border: solid 1px rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.075);
+        color: rgba(255, 255, 255, 0.75); /* Have text colour a bit transparent */ 
+	}
+
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		input[type="button"]:hover,
+		button:hover, .button:hover {
+			background-color: rgba(255, 255, 255, 0.25);
+		}
+
+		input[type="submit"]:active,
+		input[type="reset"]:active,
+		input[type="button"]:active,
+		button:active,
+		.button:active {
+			background-color:  #ffffff;
+		}
+
+		/* Keep button the same size for Phones */
+		@media screen and (max-width: 500px) {
+
+			input[type="submit"],
+			input[type="reset"],
+			input[type="button"],
+			button, .button {
+				font-size: 0.6em;
+				height: 2.85em;
+				line-height: 2.95em;
+				padding: 0 1.5em;
+				text-align: center;
+			}
+
+		}
+
+/* Thumbnails */
+    /* Use flexbox so our thumbnails look nice on all screen sizes */
+	.thumbnails {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: row;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		position: relative;
+		margin: 0 0 2em -2em;
+	}
+
+		.thumbnails a {
+			/* Take a second before applying the box shadow */
+			-moz-transition: all 0.2s ease;
+			-webkit-transition: all 0.2s ease;
+			-ms-transition: all 0.2s ease;
+			transition: all 0.2s ease;
+			border-bottom: none;
+			display: block;
+			width: 100%;
+			margin: 0 0 2em 0;
+			text-align: center;
+			border-radius: 4px;
+			box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25); /* inset makes the box shadow fall inside the thumbnail */
+			background-color: rgba(255, 255, 255, 0.075); /* Make this pretty much transparent */
+			cursor: pointer;
+			overflow: hidden;
+		}
+
+				.thumbnails a img {
+					display: block;
+					width: 100%;
+					border-radius: 4px; /* round off the thumbnail corners a bit */ 
+				}
+
+				/* Projects will be h2 so our thumbnail captions will be h3*/ 
+				.thumbnails a h3 {
+					margin: 1em;
+				}
+				
+				/* Change the background colour and apply a box shadow when hovering over the thumbnail */
+				.thumbnails a:hover {
+					background-color: rgba(255, 255, 255, 0.25);
+					box-shadow: 0 0 0.5em 0 #ffffff;
+				}
+
+		.thumbnails > div {
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			width: calc(100% / 3);
+			padding-left: 2em;
+		}
+
+			.thumbnails > div > :last-child {
+				margin-bottom: 0;
+			}
+
+        /* Laptops */
+		@media screen and (max-width: 1300px) {
+
+			.thumbnails {
+				margin: 0 0 2em -1.5em;
+			}
+
+				.thumbnails a {
+					margin: 0 0 1.5em 0;
+				}
+                /* Take any elements of thumbnails class and apply the below styling to it's immediate children. Basically just set the padding on all thumbnails. */
+				.thumbnails > div {
+					padding-left: 1.5em;
+				}
+
+		}
+        /* Tablets */
+		@media screen and (max-width: 1000px) {
+
+			.thumbnails h3 {
+				font-size: 1em;
+			}
+
+		}
+        /* Phones */
+		@media screen and (max-width: 500px) {
+
+			.thumbnails {
+				display: block;
+			}
+
+				.thumbnails a {
+					margin: 0 0 2em 0 !important;
+				}
+                /* Take any elements of thumbnails class and apply the below styling to it's immediate children. Basically just set the padding on all thumbnails. */
+				.thumbnails > div {
+					/* On phones just have one column of images */
+					display: block;
+					width: 100%; 
+				}
+
+					.thumbnails > div:last-child > :last-child {
+						margin-bottom: 0 !important;
+					}
+
+				.thumbnails h3 {
+					font-size: 1.2em;
+				}
+
+		}
+
+/* Wrapper */
+
+	#wrapper {
+		/* make our content take up 75% of the page width */
+		max-width: 75%;		
+		margin: auto;
+		padding: auto;
+		opacity: 1;
+	}	
+
+/* Header */
+#header {
+    text-align: center;
+	padding: 6em 0 1em 0;
+}
+
+    #header .avatar {
+        border-radius: 50%; /* make the border round round */ 
+		display: inline-block; /* Out text is center-aligned so an inline-block will be too */ 
+		margin: 0 0 0 0;
+        border: solid 1px rgba(255, 255, 255, 0.25); /* add a border */
+        padding: 0.5em; /* Add some space between our image and the border*/
+        background-color: rgba(255, 255, 255, 0.07); /* So the background shows through the gap between the border and the image */
+    }
+
+        #header .avatar img {
+            border-radius: 50%; /* make the image round */
+            display: block; /* I don't understand why this only works with block */
+            width: 10em; /* image size */
+        }
+    /* Cut down the padding if anything smaller than a tablet */
+    @media screen and (max-width: 1000px) {
+        #header {
+            padding: 4em 0 0.5em 0;
+        }
+    }
+/* Style the content section */
+
+	#content {
+		text-align: center;
+		font-size: 0.5em;
+		padding: 4em 0;
+	}
+
+	i {
+		padding: 0 0.5em 0 0;
+	}
+
+		/* Cut down the padding if we're tablet size or smaller */
+		@media screen and (max-width: 1000px) {
+			#content {
+				padding: 2em 0;
+			}
+		}
+
+/* Footer - in case we decide to use one*/
+
+	#footer {
+		text-align: center;
+		padding: 4em 0;
+	}
+        /* Add a nice looking line to mark the top of the footer. Or you could use <hr> tag */
+		#footer:before {
+			content: '';
+			border-top: solid 1px rgba(255, 255, 255, 0.25);
+			width: 10em; /* <hr> will span the full width of the body but this will be a bit shorter */
+			display: block;
+			margin: 0 auto 3em auto; 
+		}
+
+		/* Cut down the padding if we're tablet size or smaller */
+		@media screen and (max-width: 1000px) {
+			#footer {
+				padding: 2em 0;
+			}
+		}
+
+/* Menu Bar */
+.container {
+	display: inline-block;
+	cursor: pointer;	
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin: 1.8em 2.4em;
+	opacity: 0.7;
+	z-index: 2;
+	}
+	
+	.bar1, .bar2, .bar3 {
+	width: 35px;
+	height: 5px;
+	background-color: #ffffff;
+	margin: 6px 0;
+	transition: 0.4s;
+	}
+	
+	/* When clicked, hide the middle bar and rotate the other two by 40deg to make a cross */
+	.change .bar1 {
+	-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+	transform: rotate(-45deg) translate(-9px, 6px);
+	}
+	
+	.change .bar2 {opacity: 0;}
+	
+	.change .bar3 {
+	-webkit-transform: rotate(45deg) translate(-8px, -8px);
+	transform: rotate(45deg) translate(-8px, -8px);
+	}
+
+	.sidepanel  {
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		height: 100%;
+		top: 0;
+		right: 0;
+		background-color: #111;
+		opacity: 0.95;
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	  }
+	  
+	  .sidepanel a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: #ffffff;
+		display: block;
+		transition: 0.3s;
+	  }
