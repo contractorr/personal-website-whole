@@ -17,6 +17,7 @@ Including another URLconf
 from django.urls import path # We meed the path function to map URLs to views
 from . import views # import the views module from this directory
 
+
 app_name = 'homepage'
 # Here urlpatterns represents the pages that can be requested from the learning_logs app
 urlpatterns = [
