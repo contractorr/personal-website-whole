@@ -6,23 +6,23 @@ from django.http import HttpResponseRedirect
 def index(request):
     """The home page for my website"""
     form = SentMessage()
-    return render(request, 'homepage/index.html', {'form': form})
+    return render(request, 'index.html', {'form': form})
 
 def project_1(request):
     """Show a specific project."""
-    return render(request, 'homepage/projects/project_1.html')
+    return render(request, 'projects/project_1.html')
 
 def project_2(request):
     """Show a specific project."""
-    return render(request, 'homepage/projects/project_2.html')
+    return render(request, 'projects/project_2.html')
 
 def project_3(request):
     """Show a specific project."""
-    return render(request, 'homepage/projects/project_3.html')        
+    return render(request, 'projects/project_3.html')        
 
 def contact(request):
     """Show a specific project."""
-    return render(request, 'homepage/index.html#contact')
+    return render(request, 'index.html#contact')
 
 def send_message(request):
     # if this is a POST request we need to process the form data
@@ -45,4 +45,4 @@ def send_message(request):
     # if a GET (or any other method) we'll create a blank form
     else:
         form = SentMessage()
-    return render(request, 'homepage/index.html', {'form': form})    
+        return render(request, 'index.html', {'form': form})    
