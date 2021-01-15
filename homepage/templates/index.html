@@ -1,0 +1,83 @@
+{% extends "homepage/base.html" %}
+
+	{% block content %}
+
+            <!-- Hidden Sidepanel -->
+			<div id="myNavPanel" class="sidepanel">
+				<a href="home" onclick="toggleNav(this)">Home</a>
+				<a href="contact" onclick="toggleNav(this)">Also Home</a>
+				<a href="home" onclick="toggleNav(this)">Mystery Destination</a>
+			</div>
+				
+			<!-- Header -->
+            <header id="header">
+                <div class="avatar"><img src="/static/images/avatar.jpg" alt="My Profile Picture"/></div>
+				<h1><strong>Raj Contractor</strong></h1>
+                <ul class="icons">
+                    <li class="tooltip"><a href="https://www.linkedin.com/in/raj-contractor/" class="icon style2 fa-linkedin"><span class="tooltiptext">LinkedIn</span></a></li>
+                    <li class="tooltip"><a href="mailto:rajcontractor@hotmail.co.uk" class="icon style2 fa-envelope" target="_blank"><span class="tooltiptext">Email</span></a></li>
+                    <li class="tooltip"><a href="https://github.com/contractorr" class="icon style2 fa-github"><span class="tooltiptext">GitHub</span></a></li>
+                    <li class="tooltip"><a href="static/images/thumbs/CV.pdf" class="icon style2 fa-portrait" target="_blank"><span class="tooltiptext">CV</span></a></li>
+				</ul>
+            </header>
+
+			<!-- Main -->
+			<section id="main">
+				<hr>
+				<h2> About </h2>
+                <section class="align-left">
+					<p>This website is a work in progress.</p>
+                    <blockquote>"I used to be with it. Then they changed what it was. Now what I'm with isn't it, and what's it seems weird and scary to me." - Abe Simpson</blockquote>
+					<p>Welcome to my website. I made it to learn new things and stay with it.</p>
+					<p>Some facts about me:</p>
+					<ul>
+						<li>I once ate two large Domino's pizzas in a single sitting.</li>
+						<li>I like films and fantasy novels.</li>
+						<li>I'm an analyst at a software company.</li>
+					</ul>
+					<p>All of the front end for this website can be found at <a href="https://github.com/contractorr/personal-website">GitHub</a></p>
+					<p>Take a look below to see what I've been working on.</p> 				
+				</section>
+			    <hr>
+				<!-- Thumbnails -->
+				<section class="thumbnails">
+					<div>
+						<a href="project_1.html">
+							<img src="/static/images/thumbs/investment.jpg" alt="" />
+							<h3>ROI Projection</h3>
+						</a>
+					</div>
+					<div>
+						<a href="project_2.html">
+							<img src="/static/images/thumbs/04.jpg" alt="" />
+							<h3>Project 2</h3>
+						</a>
+					</div>
+					<div>
+						<a href="project_3.html">
+							<img src="/static/images/thumbs/06.jpg" alt="" />
+							<h3>Project 3</h3>
+						</a>
+					</div>
+				</section>
+
+			</section>
+
+			<!--Contact Section-->
+			<div id="contact">
+				<hr>
+				<h2>Contact Me</h2>
+				<p><i class="fa fa-map-marker"></i>London, UK</p>
+				<p><i class="fa fa-phone"></i>+44 7581 043305</p>
+				<a href="mailto:rajcontractor@hotmail.co.uk"><i class="fa fa-envelope" target="_blank"></i>rajcontractor@hotmail.co.uk</a>
+				<p>Send me a message:</p>
+				<form action="contact" method="POST">
+					{% csrf_token %}
+					{% for field in form %}
+						<p>{{ field }}</p>
+					{% endfor %}
+					<p><input type="submit" onclick="messageSent()" value="SEND"></p>
+				</form>
+			</div>
+	{% endblock content %}	
+

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+			
+			<div class="hero_image">
+				<img src="/static/images/avatar.jpg"/>
+				<div class="hero_text">
+					<h1 class="align-left">ROI Projection</h1>
+				</div>
+			</div>
+			
+            <!-- Hidden Sidepanel -->
+			<div id="myNavPanel" class="sidepanel">
+				<a href="../home" onclick="toggleNav(this)">Home</a>
+				<a href="../home" onclick="toggleNav(this)">Also Home</a>
+				<a href="../home" onclick="toggleNav(this)">Mystery Destination</a>
+			</div>
+
+
+			<!-- Main -->
+			<section id="main" class="align-left">
+
+				<p> Here you can project the value of a stocks and shares portfolio.<p>
+				<p> You can input the following:
+					<ul>
+						<li>Starting amount: the initial amount to be invested</li>
+						<li>Compound Annual Growth Rate(%): This is the annual rate of growth an investment is expected to generate. If CAGR = 25 and starting_amount = 100, then after 1 year your nominal ROI will be 25% and the value of your portfolio will be 125. After 3 years your nominal ROI will be 95% and the value of your portfolio will be 195 (100*(1.25**3))</li> 
+						<li>Investment period in years: the number of years you intend to invest</li>
+						<li>Beginning year (optional): the tax year you intend to make the initial investment. If not input then the next tax year will be used. In input we will assume the investment was made at the beginning of that tax year (April)</li>
+						<li>Annual investment (optional): any additional funds to be added to the portfolio on an annual basis, at the start of each tax year. These will be added for the input annual investment duration.</li>
+						<li>Annual investment duration (optional): the number of years after beginning year that the annual investment amount will be added to the portfolio. E.g. if the beginning year = 2021, annual investment = 1000 and annual investment duration = 4, than (£)1000 will be added to the overall value of your portfolio at the start of 2022, 2023, 2024 and 2025.</li>
+					</ul>
+				<p>The following assumptions have been made:
+					<ul>
+						<li>The tax-free allowance for capital gains tax is £12,500</li>
+						<li>The tax rate above the tax-free threshold is 40%</li> 
+						<li>Capital gains tax: We assume that we sell some fraction of our portfolio each year (and reinvest it in different shares). The amount of capital gains tax will depend on the profit made on the shares sold. This in turn will depend on the compound annual growth rate and the number of years the shares were held. We assume we sell 20% of our portfolio every year, selling oldest shares first. Under this assumption, for the first 5 years the age of the stocks sold is the number of years since the starting year, and after 5 years the age of any stocks sold will always be 5 years. The underlyting function can be found <a href="https://github.com/contractorr/Portfolio-Projection-Function/blob/master/portfolio_projection.py">here</a>.</li>
+					</ul>
+				   We will plot the value of the portfolio at the end of each tax year, after any tax has been extracted.</p>
+			</section>
+			<hr>
+			<h2> Inputs </h2>
+			<section id="main" class="align-left">
+			    <p>Be an optimist. Choose a compound annual growth rate of >20%. Some tech stocks have done even better than that in the past decade. Plus it makes the graphs look nicer.</p>
+				<form action="/plot/" method="post">			
+					{% csrf_token %}
+					<div class="columns">
+						{{ form.as_p }}
+					</div>
+					<p><input type="submit" value="PLOT"></p>
+				</form>
+			</section>
+			<hr>
+			<h2> Projections </h2>
+			<section class="align-left">
+				<div>
+					{% if graph_1 %}
+				        <p>Below we have a projection of the portfolio value at the end of each tax year, as well as some other useful quantities:</p>  
+						{{ graph_1|safe }}
+					{% endif %}
+				</div>
+				<div>
+					{% if graph_2 %}
+				        <p>Below we project how our investment would perform if our annual compound annual growth rate was +/-5% of the input:</p>
+						{{ graph_2|safe }}
+					{% endif %}
+				</div>
+				<p/>
+			</section>
+{% endblock content %}
