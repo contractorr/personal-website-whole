@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apps
     'homepage',
+    'project_1',
     
     # Django default apps
     'django.contrib.admin',
@@ -46,8 +47,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     # SecurityMiddleware must be listed before other middleware
     'django.middleware.security.SecurityMiddleware',
-    # Other stuff    
-    'django.middleware.security.SecurityMiddleware',
+    # Other stuff
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
