@@ -201,7 +201,12 @@ def plot_returns(results):
         xaxis=x_axis_config,
         yaxis=y_axis_config,
         hovermode='x',
-    )
+        legend=dict(
+            yanchor="top",
+            y=0.99,
+            xanchor="left",
+            x=0.01
+    ))
     #fig.write_html("investment_plot.html")
     return(fig.to_html(full_html=False, default_height=1000, default_width=1000))
     #fig.show()
@@ -242,5 +247,10 @@ def plot_upper_lower_bound_returns(years, expected_value, upper_bound, lower_bou
         title_text=title,
         xaxis=x_axis_config,
         yaxis=y_axis_config,
-    )
+        legend=dict(
+            yanchor="top",
+            y=0.99,
+            xanchor="left",
+            x=0.01
+    ))
     return(fig.to_html(full_html=False, default_height=1000, default_width=1000))  
