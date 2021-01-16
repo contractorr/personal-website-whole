@@ -1,9 +1,6 @@
 from django import forms
 from django.contrib.admin import widgets
-from .models import InputsContainer
-
-class NameForm(forms.Form):
-    your_name = forms.CharField(label='Your name', max_length=100)
+from portfolio.models import InputsContainer
 
 class PlotInputs(forms.ModelForm):
     """A form to store the messages sent by visitors"""

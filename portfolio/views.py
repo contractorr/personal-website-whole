@@ -6,10 +6,10 @@ import plotly.graph_objects as go
 from .portfolio_projection import invest, plot_returns, plot_upper_lower_bound_returns
 
 # Create your views here.
-def project_1(request):
+def portfolio(request):
     """Show a specific project."""
     form = PlotInputs()
-    return render(request, 'project_1.html', {'form': form})    
+    return render(request, 'portfolio.html', {'form': form})    
     
 def plot_graph(request):
     # if this is a POST request we need to process the form data
@@ -59,8 +59,8 @@ def plot_graph(request):
             graph_2 = plot_upper_lower_bound_returns(results[0],results[1],results_upper_bound[1],results_lower_bound[1])
             
             # get django to render the two grapths within the 'Projections' section of project_1.html
-            return render(request, 'project_1.html', {'graph_1': graph_1, 'graph_2': graph_2, 'form': form})
+            return render(request, 'portfolio.html', {'graph_1': graph_1, 'graph_2': graph_2, 'form': form})
     # if a GET (or any other method) we'll create a blank form
     else:
         form = PlotInputs()
-        return render(request, 'project_1.html', {'form': form})       
+        return render(request, 'portfolio.html', {'form': form})       

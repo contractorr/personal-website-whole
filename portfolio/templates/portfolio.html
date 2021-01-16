@@ -1,13 +1,13 @@
-{% extends "base.html" %}
+{% extends "portfolio_base.html" %}
 
+	
 {% block content %}
 			
-			<div class="hero_image">
-				<img src="/static/images/avatar.jpg"/>
-				<div class="hero_text">
-					<h1 class="align-left">ROI Projection</h1>
+			<div class="hero-image">
+				<div class="hero-text">
+					<h1>ROI Projection</h1>
 				</div>
-			</div>
+			</div>	
 			
             <!-- Hidden Sidepanel -->
 			<div id="myNavPanel" class="sidepanel">
@@ -42,7 +42,7 @@
 			<h2> Inputs </h2>
 			<section id="main" class="align-left">
 			    <p>Be an optimist. Choose a compound annual growth rate of >20%. Some tech stocks have done even better than that in the past decade. Plus it makes the graphs look nicer.</p>
-				<form action="/plot/" method="post">			
+				<form action="plot/" method="post">			
 					{% csrf_token %}
 					<div class="columns">
 						{{ form.as_p }}

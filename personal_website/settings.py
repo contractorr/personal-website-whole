@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+#import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +34,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Apps
     'homepage',
-    'project_1',
+    'portfolio',
     
     # Django default apps
     'django.contrib.admin',
@@ -130,5 +131,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Heroku settings
-import django_heroku
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
